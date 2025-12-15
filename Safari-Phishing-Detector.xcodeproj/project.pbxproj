@@ -1,0 +1,779 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		41D2F67B2EF0B7C5007DB525 /* Safari-Phishing-Detector Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 41D2F67A2EF0B7C5007DB525 /* Safari-Phishing-Detector Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		41D2F6652EF0B7C5007DB525 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 41D2F6422EF0B7C3007DB525 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 41D2F6492EF0B7C3007DB525;
+			remoteInfo = "Safari-Phishing-Detector";
+		};
+		41D2F66F2EF0B7C5007DB525 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 41D2F6422EF0B7C3007DB525 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 41D2F6492EF0B7C3007DB525;
+			remoteInfo = "Safari-Phishing-Detector";
+		};
+		41D2F67C2EF0B7C5007DB525 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 41D2F6422EF0B7C3007DB525 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 41D2F6792EF0B7C5007DB525;
+			remoteInfo = "Safari-Phishing-Detector Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		41D2F6992EF0B7C5007DB525 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				41D2F67B2EF0B7C5007DB525 /* Safari-Phishing-Detector Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		41D2F64A2EF0B7C3007DB525 /* Safari-Phishing-Detector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Safari-Phishing-Detector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		41D2F6642EF0B7C5007DB525 /* Safari-Phishing-DetectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Safari-Phishing-DetectorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		41D2F66E2EF0B7C5007DB525 /* Safari-Phishing-DetectorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Safari-Phishing-DetectorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		41D2F67A2EF0B7C5007DB525 /* Safari-Phishing-Detector Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Safari-Phishing-Detector Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		41D2F6932EF0B7C5007DB525 /* Exceptions for "Safari-Phishing-Detector Extension" folder in "Safari-Phishing-Detector Extension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 41D2F6792EF0B7C5007DB525 /* Safari-Phishing-Detector Extension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		41D2F64C2EF0B7C3007DB525 /* Safari-Phishing-Detector */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Safari-Phishing-Detector";
+			sourceTree = "<group>";
+		};
+		41D2F6672EF0B7C5007DB525 /* Safari-Phishing-DetectorTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Safari-Phishing-DetectorTests";
+			sourceTree = "<group>";
+		};
+		41D2F6712EF0B7C5007DB525 /* Safari-Phishing-DetectorUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Safari-Phishing-DetectorUITests";
+			sourceTree = "<group>";
+		};
+		41D2F67E2EF0B7C5007DB525 /* Safari-Phishing-Detector Extension */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				41D2F6932EF0B7C5007DB525 /* Exceptions for "Safari-Phishing-Detector Extension" folder in "Safari-Phishing-Detector Extension" target */,
+			);
+			explicitFolders = (
+				Resources/_locales,
+				Resources/images,
+			);
+			path = "Safari-Phishing-Detector Extension";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		41D2F6472EF0B7C3007DB525 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41D2F6612EF0B7C5007DB525 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41D2F66B2EF0B7C5007DB525 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41D2F6772EF0B7C5007DB525 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		41D2F6412EF0B7C3007DB525 = {
+			isa = PBXGroup;
+			children = (
+				41D2F64C2EF0B7C3007DB525 /* Safari-Phishing-Detector */,
+				41D2F6672EF0B7C5007DB525 /* Safari-Phishing-DetectorTests */,
+				41D2F6712EF0B7C5007DB525 /* Safari-Phishing-DetectorUITests */,
+				41D2F67E2EF0B7C5007DB525 /* Safari-Phishing-Detector Extension */,
+				41D2F64B2EF0B7C3007DB525 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		41D2F64B2EF0B7C3007DB525 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				41D2F64A2EF0B7C3007DB525 /* Safari-Phishing-Detector.app */,
+				41D2F6642EF0B7C5007DB525 /* Safari-Phishing-DetectorTests.xctest */,
+				41D2F66E2EF0B7C5007DB525 /* Safari-Phishing-DetectorUITests.xctest */,
+				41D2F67A2EF0B7C5007DB525 /* Safari-Phishing-Detector Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		41D2F6492EF0B7C3007DB525 /* Safari-Phishing-Detector */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41D2F69A2EF0B7C5007DB525 /* Build configuration list for PBXNativeTarget "Safari-Phishing-Detector" */;
+			buildPhases = (
+				41D2F6462EF0B7C3007DB525 /* Sources */,
+				41D2F6472EF0B7C3007DB525 /* Frameworks */,
+				41D2F6482EF0B7C3007DB525 /* Resources */,
+				41D2F6992EF0B7C5007DB525 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				41D2F67D2EF0B7C5007DB525 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				41D2F64C2EF0B7C3007DB525 /* Safari-Phishing-Detector */,
+			);
+			name = "Safari-Phishing-Detector";
+			packageProductDependencies = (
+			);
+			productName = "Safari-Phishing-Detector";
+			productReference = 41D2F64A2EF0B7C3007DB525 /* Safari-Phishing-Detector.app */;
+			productType = "com.apple.product-type.application";
+		};
+		41D2F6632EF0B7C5007DB525 /* Safari-Phishing-DetectorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41D2F69D2EF0B7C5007DB525 /* Build configuration list for PBXNativeTarget "Safari-Phishing-DetectorTests" */;
+			buildPhases = (
+				41D2F6602EF0B7C5007DB525 /* Sources */,
+				41D2F6612EF0B7C5007DB525 /* Frameworks */,
+				41D2F6622EF0B7C5007DB525 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				41D2F6662EF0B7C5007DB525 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				41D2F6672EF0B7C5007DB525 /* Safari-Phishing-DetectorTests */,
+			);
+			name = "Safari-Phishing-DetectorTests";
+			packageProductDependencies = (
+			);
+			productName = "Safari-Phishing-DetectorTests";
+			productReference = 41D2F6642EF0B7C5007DB525 /* Safari-Phishing-DetectorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		41D2F66D2EF0B7C5007DB525 /* Safari-Phishing-DetectorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41D2F6A02EF0B7C5007DB525 /* Build configuration list for PBXNativeTarget "Safari-Phishing-DetectorUITests" */;
+			buildPhases = (
+				41D2F66A2EF0B7C5007DB525 /* Sources */,
+				41D2F66B2EF0B7C5007DB525 /* Frameworks */,
+				41D2F66C2EF0B7C5007DB525 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				41D2F6702EF0B7C5007DB525 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				41D2F6712EF0B7C5007DB525 /* Safari-Phishing-DetectorUITests */,
+			);
+			name = "Safari-Phishing-DetectorUITests";
+			packageProductDependencies = (
+			);
+			productName = "Safari-Phishing-DetectorUITests";
+			productReference = 41D2F66E2EF0B7C5007DB525 /* Safari-Phishing-DetectorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		41D2F6792EF0B7C5007DB525 /* Safari-Phishing-Detector Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41D2F6942EF0B7C5007DB525 /* Build configuration list for PBXNativeTarget "Safari-Phishing-Detector Extension" */;
+			buildPhases = (
+				41D2F6762EF0B7C5007DB525 /* Sources */,
+				41D2F6772EF0B7C5007DB525 /* Frameworks */,
+				41D2F6782EF0B7C5007DB525 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				41D2F67E2EF0B7C5007DB525 /* Safari-Phishing-Detector Extension */,
+			);
+			name = "Safari-Phishing-Detector Extension";
+			packageProductDependencies = (
+			);
+			productName = "Safari-Phishing-Detector Extension";
+			productReference = 41D2F67A2EF0B7C5007DB525 /* Safari-Phishing-Detector Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		41D2F6422EF0B7C3007DB525 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2620;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					41D2F6492EF0B7C3007DB525 = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					41D2F6632EF0B7C5007DB525 = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = 41D2F6492EF0B7C3007DB525;
+					};
+					41D2F66D2EF0B7C5007DB525 = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = 41D2F6492EF0B7C3007DB525;
+					};
+					41D2F6792EF0B7C5007DB525 = {
+						CreatedOnToolsVersion = 26.2;
+					};
+				};
+			};
+			buildConfigurationList = 41D2F6452EF0B7C3007DB525 /* Build configuration list for PBXProject "Safari-Phishing-Detector" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 41D2F6412EF0B7C3007DB525;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 41D2F64B2EF0B7C3007DB525 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				41D2F6492EF0B7C3007DB525 /* Safari-Phishing-Detector */,
+				41D2F6632EF0B7C5007DB525 /* Safari-Phishing-DetectorTests */,
+				41D2F66D2EF0B7C5007DB525 /* Safari-Phishing-DetectorUITests */,
+				41D2F6792EF0B7C5007DB525 /* Safari-Phishing-Detector Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		41D2F6482EF0B7C3007DB525 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41D2F6622EF0B7C5007DB525 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41D2F66C2EF0B7C5007DB525 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41D2F6782EF0B7C5007DB525 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		41D2F6462EF0B7C3007DB525 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41D2F6602EF0B7C5007DB525 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41D2F66A2EF0B7C5007DB525 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41D2F6762EF0B7C5007DB525 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		41D2F6662EF0B7C5007DB525 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 41D2F6492EF0B7C3007DB525 /* Safari-Phishing-Detector */;
+			targetProxy = 41D2F6652EF0B7C5007DB525 /* PBXContainerItemProxy */;
+		};
+		41D2F6702EF0B7C5007DB525 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 41D2F6492EF0B7C3007DB525 /* Safari-Phishing-Detector */;
+			targetProxy = 41D2F66F2EF0B7C5007DB525 /* PBXContainerItemProxy */;
+		};
+		41D2F67D2EF0B7C5007DB525 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 41D2F6792EF0B7C5007DB525 /* Safari-Phishing-Detector Extension */;
+			targetProxy = 41D2F67C2EF0B7C5007DB525 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		41D2F6952EF0B7C5007DB525 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9K2LF2DT5X;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Safari-Phishing-Detector Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Safari-Phishing-Detector Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "pl.witkowska-oliwia.Safari-Phishing-Detector.Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		41D2F6962EF0B7C5007DB525 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9K2LF2DT5X;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Safari-Phishing-Detector Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Safari-Phishing-Detector Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "pl.witkowska-oliwia.Safari-Phishing-Detector.Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		41D2F6972EF0B7C5007DB525 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 9K2LF2DT5X;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		41D2F6982EF0B7C5007DB525 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 9K2LF2DT5X;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		41D2F69B2EF0B7C5007DB525 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9K2LF2DT5X;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Safari-Phishing-Detector";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "pl.witkowska-oliwia.Safari-Phishing-Detector";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		41D2F69C2EF0B7C5007DB525 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9K2LF2DT5X;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Safari-Phishing-Detector";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "pl.witkowska-oliwia.Safari-Phishing-Detector";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		41D2F69E2EF0B7C5007DB525 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9K2LF2DT5X;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "pl.witkowska-oliwia.Safari-Phishing-DetectorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Safari-Phishing-Detector.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Safari-Phishing-Detector";
+			};
+			name = Debug;
+		};
+		41D2F69F2EF0B7C5007DB525 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9K2LF2DT5X;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "pl.witkowska-oliwia.Safari-Phishing-DetectorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Safari-Phishing-Detector.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Safari-Phishing-Detector";
+			};
+			name = Release;
+		};
+		41D2F6A12EF0B7C5007DB525 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9K2LF2DT5X;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "pl.witkowska-oliwia.Safari-Phishing-DetectorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Safari-Phishing-Detector";
+			};
+			name = Debug;
+		};
+		41D2F6A22EF0B7C5007DB525 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9K2LF2DT5X;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "pl.witkowska-oliwia.Safari-Phishing-DetectorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Safari-Phishing-Detector";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		41D2F6452EF0B7C3007DB525 /* Build configuration list for PBXProject "Safari-Phishing-Detector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41D2F6972EF0B7C5007DB525 /* Debug */,
+				41D2F6982EF0B7C5007DB525 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41D2F6942EF0B7C5007DB525 /* Build configuration list for PBXNativeTarget "Safari-Phishing-Detector Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41D2F6952EF0B7C5007DB525 /* Debug */,
+				41D2F6962EF0B7C5007DB525 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41D2F69A2EF0B7C5007DB525 /* Build configuration list for PBXNativeTarget "Safari-Phishing-Detector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41D2F69B2EF0B7C5007DB525 /* Debug */,
+				41D2F69C2EF0B7C5007DB525 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41D2F69D2EF0B7C5007DB525 /* Build configuration list for PBXNativeTarget "Safari-Phishing-DetectorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41D2F69E2EF0B7C5007DB525 /* Debug */,
+				41D2F69F2EF0B7C5007DB525 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41D2F6A02EF0B7C5007DB525 /* Build configuration list for PBXNativeTarget "Safari-Phishing-DetectorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41D2F6A12EF0B7C5007DB525 /* Debug */,
+				41D2F6A22EF0B7C5007DB525 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 41D2F6422EF0B7C3007DB525 /* Project object */;
+}
