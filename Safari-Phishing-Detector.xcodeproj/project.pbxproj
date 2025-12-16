@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		41D2F67B2EF0B7C5007DB525 /* Safari-Phishing-Detector Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 41D2F67A2EF0B7C5007DB525 /* Safari-Phishing-Detector Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		41D2F6AA2EF0C5F5007DB525 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 41D2F6A92EF0C5EC007DB525 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		41D2F6642EF0B7C5007DB525 /* Safari-Phishing-DetectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Safari-Phishing-DetectorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D2F66E2EF0B7C5007DB525 /* Safari-Phishing-DetectorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Safari-Phishing-DetectorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		41D2F67A2EF0B7C5007DB525 /* Safari-Phishing-Detector Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Safari-Phishing-Detector Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		41D2F6A92EF0C5EC007DB525 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -130,6 +132,7 @@
 		41D2F6412EF0B7C3007DB525 = {
 			isa = PBXGroup;
 			children = (
+				41D2F6A92EF0C5EC007DB525 /* .gitignore */,
 				41D2F64C2EF0B7C3007DB525 /* Safari-Phishing-Detector */,
 				41D2F6672EF0B7C5007DB525 /* Safari-Phishing-DetectorTests */,
 				41D2F6712EF0B7C5007DB525 /* Safari-Phishing-DetectorUITests */,
@@ -297,6 +300,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41D2F6AA2EF0C5F5007DB525 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,15 @@
-browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    console.log("Received request: ", request);
+// background.js – minimalny helper
 
-    if (request.greeting === "hello")
-        return Promise.resolve({ farewell: "goodbye" });
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message && message.type === "GET_ACTIVE_URL") {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      if (!tabs || !tabs.length) {
+        sendResponse({ ok: false, error: "Brak aktywnej karty" });
+        return;
+      }
+      const url = tabs[0].url || "";
+      sendResponse({ ok: true, url });
+    });
+    return true; // async
+  }
 });

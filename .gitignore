@@ -1,0 +1,51 @@
+# Xcode
+DerivedData/
+build/
+Build/
+xcuserdata/
+*.xcscmblueprint
+*.xccheckout
+
+# Swift / iOS / macOS
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# SwiftPM
+.build/
+
+# CocoaPods (jeśli kiedyś dodasz)
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/Build/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/
+fastlane/test_output/
+
+# macOS
+.DS_Store
+*.swp
+*~
+.profile
+
+# Logs
+*.log
+
+# User-specific Xcode settings
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.pbxuser
+
+# Playground
+timeline.xctimeline
+playground.xcworkspace
+
+# Safari extension artifacts (lokalne buildy)
+Safari Phishing Detector.xcodeproj/project.xcworkspace/
+
