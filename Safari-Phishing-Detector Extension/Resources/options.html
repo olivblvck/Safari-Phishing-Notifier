@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ustawienia</title>
+  <style>
+    body { font-family: -apple-system, sans-serif; padding: 24px; max-width: 400px; }
+    h1 { font-size: 18px; margin-bottom: 16px; }
+    label { display: block; margin-bottom: 8px; font-weight: 600; }
+    select { width: 100%; padding: 8px; font-size: 14px; border-radius: 6px; border: 1px solid #ccc; }
+    .status { margin-top: 12px; font-size: 13px; color: #2e7d32; opacity: 0; transition: opacity 0.3s; }
+    .status.visible { opacity: 1; }
+  </style>
+</head>
+<body>
+  <h1>Ustawienia Safari Phishing Detector</h1>
+
+  <label for="language-select">Język / Language</label>
+  <select id="language-select">
+    <option value="auto">Automatyczny (system)</option>
+    <option value="pl">Polski</option>
+    <option value="en">English</option>
+    <option value="de">Deutsch</option>
+    <option value="uk">Українська</option>
+    <option value="fr">Français</option>
+    <option value="it">Italiano</option>
+    <option value="es">Español</option>
+    <option value="tr">Türkçe</option>
+    <option value="az">Azərbaycan</option>
+    <option value="sk">Slovenčina</option>
+    <option value="cs">Čeština</option>
+  </select>
+
+  <div class="status" id="status">Zapisano ✓</div>
+
+  <script src="options.js"></script>
+</body>
+</html>

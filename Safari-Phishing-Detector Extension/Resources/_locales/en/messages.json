@@ -1,10 +1,28 @@
 {
-    "extension_name": {
-        "message": "Safari-Phishing-Detector Extension",
-        "description": "The display name for the extension."
-    },
-    "extension_description": {
-        "message": "This is Safari-Phishing-Detector Extension. You should tell us what your extension does here.",
-        "description": "Description of what the extension does."
-    }
+  "statusSafe": { "message": "✅ Domain $1 looks typical. Still, always be careful when entering personal data." },
+  "statusWarning": { "message": "⚠️ Careful! Domain $1 looks unusual. Check it before entering any data." },
+  "statusDanger": { "message": "🚨 HIGH RISK! Domain $1 looks very suspicious. DO NOT enter any data." },
+  "toggleShowDetails": { "message": "Show analysis details" },
+  "toggleHideDetails": { "message": "Hide analysis details" },
+  "riskLow": { "message": "Low risk" },
+  "riskMedium": { "message": "Medium risk" },
+  "riskHigh": { "message": "High risk" },
+  "btnSafeBrowsing": { "message": "Safe Browsing" },
+  "btnTrustpilot": { "message": "Trustpilot" },
+  "btnAddTrusted": { "message": "Add to trusted" },
+  "btnRemoveTrusted": { "message": "Remove from trusted" },
+  "errorNoData": { "message": "No data available" },
+  "reasonWhitelisted": { "message": "✅ Domain is on the trusted list." },
+  "reasonSafe": { "message": "✅ Domain looks safe." },
+  "reasonWarning": { "message": "⚠️ Careful! Domain looks unusual. Check it before entering data." },
+  "reasonDanger": { "message": "🚨 HIGH RISK! Domain looks very suspicious. DO NOT enter any data." },
+  "detailBaseCaution": { "message": "Base caution level" },
+  "detailTypoKeywordCombo": { "message": "Combination of typo and phishing keyword." },
+  "detailLongDomain": { "message": "Domain name is very long." },
+  "tldMediumRisk": { "message": "TLD $1 carries medium risk." },
+  "tldHighRisk": { "message": "TLD $1 is a high risk signal." },
+  "keywordRisky": { "message": "Domain contains a suspicious word: \"$1\"." },
+  "keywordSpam": { "message": "Domain contains a common spam word: \"$1\"." },
+  "typoImpersonation": { "message": "🚨 Domain looks like impersonation of trusted domain \"$1\"." },
+  "typoSimilar": { "message": "⚠️ Domain is very similar to trusted domain \"$1\"." }
 }

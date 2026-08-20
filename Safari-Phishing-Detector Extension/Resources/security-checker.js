@@ -16,22 +16,21 @@ class DomainSecurityChecker {
         domain,
         status: 'safe',
         score: 0,
-        reason: '✅ Domena jest na liście zaufanych.',
+        reason: chrome.i18n.getMessage("reasonWhitelisted"),
         color: 'green',
         details: [],
         warning: false
       };
     }
 
-      let score = 25;
-      const details = [];
+    let score = 25;
+    const details = [];
 
-      // bazowy poziom ostrożności
-      details.push({
-        reason: 'Bazowy poziom ostrożności',
-        points: 25
-      });
-
+    // bazowy poziom ostrożności
+    details.push({
+      reason: chrome.i18n.getMessage("detailBaseCaution"),
+      points: 25
+    });
 
     // 2. TLD
     const tldCheck = this.checkTLD(tld);
@@ -59,7 +58,7 @@ class DomainSecurityChecker {
       const comboPoints = 20;
       score += comboPoints;
       details.push({
-        reason: 'Połączenie literówki z phishingowym słowem kluczowym.',
+        reason: chrome.i18n.getMessage("detailTypoKeywordCombo"),
         points: comboPoints
       });
     }
@@ -70,7 +69,7 @@ class DomainSecurityChecker {
       const longPoints = 15;
       score += longPoints;
       details.push({
-        reason: 'Domena jest bardzo długa.',
+        reason: chrome.i18n.getMessage("detailLongDomain"),
         points: longPoints
       });
     }
@@ -80,15 +79,15 @@ class DomainSecurityChecker {
     let status, reason, color;
     if (score <= 25) {
       status = 'safe';
-      reason = '✅ Domena wygląda bezpiecznie.';
+      reason = chrome.i18n.getMessage("reasonSafe");
       color = 'green';
     } else if (score <= 60) {
       status = 'warning';
-      reason = '⚠️ Uważaj! Domena wygląda nietypowo. Sprawdź ją przed podaniem danych.';
+      reason = chrome.i18n.getMessage("reasonWarning");
       color = 'yellow';
     } else {
       status = 'danger';
-      reason = '🚨 WYSOKIE RYZYKO! Domena wygląda bardzo podejrzanie. NIE podawaj żadnych danych.';
+      reason = chrome.i18n.getMessage("reasonDanger");
       color = 'red';
     }
 
@@ -126,10 +125,16 @@ class DomainSecurityChecker {
       return { points: 0, reason: null };
     }
     if (medium.includes(tld)) {
-      return { points: 20, reason: `TLD ${tld} ma średnie ryzyko.` };
+      return {
+        points: 20,
+        reason: chrome.i18n.getMessage("tldMediumRisk", [tld])
+      };
     }
     if (high.includes(tld)) {
-      return { points: 40, reason: `TLD ${tld} to wysoki sygnał ryzyka.` };
+      return {
+        points: 40,
+        reason: chrome.i18n.getMessage("tldHighRisk", [tld])
+      };
     }
     return { points: 10, reason: null };
   }
@@ -141,7 +146,7 @@ class DomainSecurityChecker {
     for (const keyword of this.config.risky_keywords || []) {
       if (domain.includes(keyword)) {
         points += 15;
-        reason = `Domena zawiera podejrzane słowo: "${keyword}".`;
+        reason = chrome.i18n.getMessage("keywordRisky", [keyword]);
         break;
       }
     }
@@ -149,7 +154,7 @@ class DomainSecurityChecker {
     for (const keyword of this.config.spam_keywords || []) {
       if (domain.includes(keyword) && !reason) {
         points += 10;
-        reason = `Domena zawiera typowe słowo spamowe: "${keyword}".`;
+        reason = chrome.i18n.getMessage("keywordSpam", [keyword]);
         break;
       }
     }
@@ -246,8 +251,8 @@ class DomainSecurityChecker {
       const points = bestMatch.score > 0.8 ? 60 : 45;
       const reason =
         bestMatch.score > 0.8
-          ? `🚨 Domena wygląda jak podszycie pod zaufaną domenę "${bestMatch.trustedHost}".`
-          : `⚠️ Domena jest bardzo podobna do zaufanej domeny "${bestMatch.trustedHost}".`;
+          ? chrome.i18n.getMessage("typoImpersonation", [bestMatch.trustedHost])
+          : chrome.i18n.getMessage("typoSimilar", [bestMatch.trustedHost]);
 
       return {
         detected: true,

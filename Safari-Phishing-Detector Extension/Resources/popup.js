@@ -13,13 +13,13 @@ function getLocalWhitelist() {
 
 // --- główne wejście ---
 
-document.addEventListener('DOMContentLoaded', () => {
-  // inicjalizacja przycisku szczegółów
+document.addEventListener('DOMContentLoaded', async () => {
+  await initI18n();
   initDetailsToggle();
 
   chrome.runtime.sendMessage({ type: "GET_ACTIVE_URL" }, (response) => {
     if (!response || !response.ok) {
-      showError(response && response.error ? response.error : "Brak danych");
+      showError(response && response.error ? response.error : getMessage("errorNoData"));
       return;
     }
 
@@ -51,11 +51,13 @@ function initDetailsToggle() {
   analysisList = document.getElementById('analysis-details');
 
   if (toggleDetailsBtn && analysisList) {
+    toggleDetailsBtn.textContent = getMessage("toggleShowDetails");
+
     toggleDetailsBtn.addEventListener('click', () => {
       analysisList.classList.toggle('visible');
       toggleDetailsBtn.textContent = analysisList.classList.contains('visible')
-        ? 'Ukryj szczegóły analizy'
-        : 'Pokaż szczegóły analizy';
+        ? getMessage("toggleHideDetails")
+        : getMessage("toggleShowDetails");
     });
   }
 }
@@ -72,19 +74,14 @@ function displayResult(result, url) {
   const warningBox = document.getElementById('warningBox');
   warningBox.className = `warning ${result.color}`;
 
+  const domainHtml = `<strong>${result.domain}</strong>`;
   let message;
   if (result.status === 'safe') {
-    message =
-      `✅ Domena <strong>${result.domain}</strong> wygląda typowo. ` +
-      `Pamiętaj jednak, by zawsze uważać przy podawaniu danych.`;
+    message = getMessage("statusSafe", [domainHtml]);
   } else if (result.status === 'warning') {
-    message =
-      `⚠️ Uważaj! Domena <strong>${result.domain}</strong> wygląda nietypowo. ` +
-      `Sprawdź ją przed podaniem danych.`;
+    message = getMessage("statusWarning", [domainHtml]);
   } else {
-    message =
-      `🚨 WYSOKIE RYZYKO! Domena <strong>${result.domain}</strong> wygląda bardzo podejrzanie. ` +
-      `NIE podawaj żadnych danych.`;
+    message = getMessage("statusDanger", [domainHtml]);
   }
   warningBox.innerHTML = message;
 
@@ -93,29 +90,28 @@ function displayResult(result, url) {
   scoreFill.className = `score-fill ${result.color}`;
 
   const level =
-    result.score <= 25 ? 'Niskie ryzyko' :
-    result.score <= 60 ? 'Średnie ryzyko' :
-                        'Wysokie ryzyko';
+    result.score <= 25 ? getMessage("riskLow") :
+    result.score <= 60 ? getMessage("riskMedium") :
+                          getMessage("riskHigh");
 
   document.getElementById('scoreNumber').textContent =
     `${result.score}/100 • ${level}`;
 
   // --- szczegółowa analiza z punktami ---
-    if (analysisList && toggleDetailsBtn) {
-      const totalDetailPoints = (result.details || [])
-        .reduce((sum, d) => sum + (d.points || 0), 0);
+  if (analysisList && toggleDetailsBtn) {
+    const totalDetailPoints = (result.details || [])
+      .reduce((sum, d) => sum + (d.points || 0), 0);
 
-      if (totalDetailPoints > 0) {
-        toggleDetailsBtn.style.display = 'inline-block';
-        analysisList.innerHTML = result.details
-          .map(d => `<li>${d.reason} <span class="points">(+${d.points})</span></li>`)
-          .join('');
-      } else {
-        toggleDetailsBtn.style.display = 'none';
-        analysisList.innerHTML = '';
-      }
+    if (totalDetailPoints > 0) {
+      toggleDetailsBtn.style.display = 'inline-block';
+      analysisList.innerHTML = result.details
+        .map(d => `<li>${d.reason} <span class="points">(+${d.points})</span></li>`)
+        .join('');
+    } else {
+      toggleDetailsBtn.style.display = 'none';
+      analysisList.innerHTML = '';
     }
-
+  }
 
   renderButtons(result, url);
 }
@@ -127,11 +123,11 @@ function renderButtons(result, url) {
   buttonGroup.innerHTML = "";
 
   const btnSafe = document.createElement('button');
-  btnSafe.textContent = "🔒 Safe Browsing";
+  btnSafe.textContent = "🔒 " + getMessage("btnSafeBrowsing");
   btnSafe.addEventListener('click', () => openSafeBrowsing(result.domain));
 
   const btnTp = document.createElement('button');
-  btnTp.textContent = "⭐ Trustpilot";
+  btnTp.textContent = "⭐ " + getMessage("btnTrustpilot");
   btnTp.addEventListener('click', () => openTrustpilot(result.domain));
 
   const btnTrust = document.createElement('button');
@@ -148,9 +144,9 @@ function renderButtons(result, url) {
   function updateTrustButton() {
     const list = getLocalWhitelist();
     if (isTrustedDomain(list)) {
-      btnTrust.textContent = "Usuń z zaufanych";
+      btnTrust.textContent = getMessage("btnRemoveTrusted");
     } else {
-      btnTrust.textContent = "Dodaj do zaufanych";
+      btnTrust.textContent = getMessage("btnAddTrusted");
     }
   }
 
@@ -186,20 +182,36 @@ function renderButtons(result, url) {
 
 // --- akcje pomocnicze ---
 
-function openSafeBrowsing(domain) {
-  chrome.tabs.create({
-    url: `https://transparencyreport.google.com/safe-browsing/search?url=${encodeURIComponent(domain)}&hl=pl`
+function getEffectiveLanguage() {
+  return new Promise((resolve) => {
+    chrome.storage.local.get(['spd_language'], (data) => {
+      const lang = data.spd_language;
+      if (lang && lang !== 'auto') {
+        resolve(lang);
+      } else {
+        resolve(chrome.i18n.getUILanguage().split('-')[0]);
+      }
+    });
   });
 }
 
-function openTrustpilot(domain) {
+async function openSafeBrowsing(domain) {
+  const lang = await getEffectiveLanguage();
   chrome.tabs.create({
-    url: `https://pl.trustpilot.com/review/${domain}`
+    url: `https://transparencyreport.google.com/safe-browsing/search?url=${encodeURIComponent(domain)}&hl=${lang}`
   });
 }
 
-function showError(message) {
-  const errorBox = document.getElementById('error');
-  errorBox.classList.remove('hidden');
-  document.getElementById('errorMessage').textContent = message;
+async function openTrustpilot(domain) {
+  const lang = await getEffectiveLanguage();
+const trustpilotLangs = ['pl', 'de', 'fr', 'it', 'es', 'sv', 'no', 'fi'];
+  const subdomain = trustpilotLangs.includes(lang) ? `${lang}.` : '';
+  chrome.tabs.create({
+    url: `https://${subdomain}trustpilot.com/review/${domain}`
+  });
 }
+// -- ustawienia
+
+document.getElementById('open-settings')?.addEventListener('click', () => {
+  chrome.runtime.openOptionsPage();
+});

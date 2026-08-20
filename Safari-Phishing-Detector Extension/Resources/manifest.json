@@ -2,8 +2,13 @@
   "manifest_version": 3,
 
   "name": "Safari Phishing Detector",
-  "description": "Lokalna analiza domen (TLD, typosquatting, heurystyki) dla Safari.",
+  "description": "Domain analysis for Safari.",
   "version": "1.0",
+  "default_locale": "pl",
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+    },
 
   "icons": {
     "48": "images/icon-48.png",
@@ -20,11 +25,12 @@
   "action": {
     "default_popup": "popup.html",
     "default_icon": "images/toolbar-icon.svg",
-    "default_title": "Bezpieczeństwo"
+    "default_title": "Security"
   },
 
   "permissions": [
     "tabs",
-    "activeTab"
+    "activeTab",
+    "storage"
   ]
 }
