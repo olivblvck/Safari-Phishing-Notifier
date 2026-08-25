@@ -1,230 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
 <head>
-    <meta charset="UTF-8">
-        <title>Security Check</title>
-        <style>
-            * { margin: 0; padding: 0; box-sizing: border-box; }
-            body {
-                font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-                width: 420px;
-                padding: 16px;
-                background: #fafafa;
-                color: #333;
-                font-size: 13px;
-            }
-            .header {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                margin-bottom: 16px;
-                border-bottom: 1px solid #e0e0e0;
-                padding-bottom: 12px;
-            }
-            .header h1 {
-                font-size: 15px;
-                font-weight: 600;
-                margin: 0;
-            }
-            .status-badge {
-                padding: 6px 12px;
-                border-radius: 20px;
-                font-weight: 600;
-                font-size: 10px;
-                text-transform: uppercase;
-            }
-            .status-badge.green { background: #d4edda; color: #155724; }
-            .status-badge.yellow { background: #fff3cd; color: #856404; }
-            .status-badge.red { background: #f8d7da; color: #721c24; }
-            .warning {
-                padding: 12px;
-                border-radius: 6px;
-                margin-bottom: 16px;
-                border-left: 4px solid;
-            }
-            .warning.green { background: #d4edda; border-color: #28a745; color: #155724; }
-            .warning.yellow { background: #fff3cd; border-color: #ffc107; color: #856404; }
-            .warning.red { background: #f8d7da; border-color: #dc3545; color: #721c24; }
-            .domain-name {
-                font-weight: 600;
-                word-break: break-all;
-                margin: 8px 0;
-                font-family: monospace;
-                font-size: 11px;
-                color: #555;
-            }
-            .score {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                margin: 12px 0;
-            }
-            .score-bar {
-                flex: 1;
-                height: 6px;
-                background: #e0e0e0;
-                border-radius: 3px;
-                overflow: hidden;
-            }
-            .score-fill {
-                height: 100%;
-                transition: width 0.3s;
-            }
-            .score-fill.green { background: #28a745; }
-            .score-fill.yellow { background: #ffc107; }
-            .score-fill.red { background: #dc3545; }
-            .score-number {
-                font-weight: 600;
-                min-width: 35px;
-                font-size: 12px;
-            }
-            .details {
-                background: #f9f9f9;
-                border: 1px solid #e0e0e0;
-                border-radius: 4px;
-                padding: 8px;
-                margin: 12px 0;
-                font-size: 11px;
-            }
-            .details ul {
-                margin: 0;
-                padding-left: 16px;
-            }
-            .details li {
-                margin: 4px 0;
-            }
-            button {
-                padding: 10px 12px;
-                border: none;
-                border-radius: 4px;
-                font-size: 11px;
-                cursor: pointer;
-                background: #208094;
-                color: white;
-                transition: background 0.2s;
-                font-weight: 500;
-            }
-            .buttons {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 8px;
-                justify-content: center;
-                align-items: center;
-            }
-            
-            button:hover { background: #176a7a; }
-            .buttons button {
-                min-width: 140px;
-            }
-            
-            /* główne przyciski (pierwsze dwa) – zajmują po ~45% */
-            .buttons button:not(.secondary-button) {
-                flex: 1 1 45%;
-            }
-            
-            /* przycisk zaufania – jeden, wyśrodkowany */
-            button.secondary-button {
-                flex: 0 1 60%;
-                max-width: 260px;
-                background-color: #ffffff;
-                color: #333333;
-                border: 1px solid #d0d0d0;
-                align-self: center;
-            }
-            
-            button.secondary-button:hover {
-                background-color: #f5f5f5;
-            }
-            
-            .hidden { display: none; }
-            .spinner {
-                display: inline-block;
-                width: 12px;
-                height: 12px;
-                border: 2px solid #f3f3f3;
-                border-top: 2px solid #208094;
-                border-radius: 50%;
-                animation: spin 0.8s linear infinite;
-            }
-            @keyframes spin {
-                0% { transform: rotate(0deg); }
-                100% { transform: rotate(360deg); }
-            }
-          .details-toggle {
-            font-size: 12px;
-            background: none;
-            border: none;
-            color: #333333;
-            cursor: pointer;
-            padding: 0;
-            text-align: center; 
-          }
-           
-          .analysis-details {
-            list-style: disc;
-            margin: 8px 0 0 18px;
-            padding: 0;
-            display: none;
-            font-size: 12px;
-          }
-          .analysis-details.visible {
-            display: block;
-          }
-          .analysis-details .points {
-            color: #888;
-            font-size: 11px;
-          }
-        </style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Security Check</title>
+  <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-    <div class="header">
-        <h1>Bezpieczeństwo strony</h1>
-        <span class="status-badge" id="statusBadge"><span class="spinner"></span></span>
-    </div>
-
-    <div id="result" class="hidden">
-
-        <div class="warning" id="warningBox">
-            <strong>Sprawdzanie...</strong>
-        </div>
-
-        <div class="score">
-            <span>Risk Score:</span>
-            <div class="score-bar">
-                <div class="score-fill" id="scoreFill"></div>
-            </div>
-            <span class="score-number" id="scoreNumber">0/100</span>
-        </div>
-
-        <div class="details" id="details">
-            <div id="analysis-container" class="analysis-container">
-              <button id="toggle-details" class="details-toggle">
-                Pokaż szczegóły analizy
-              </button>
-              <ul id="analysis-details" class="analysis-details"></ul>
-            </div>
-            
-        </div>
-
-        <div id="buttons" class="buttons"></div>
-
-
-
-    </div>
-
-    <div id="error" class="hidden">
-        <div class="warning red">
-            <strong>Błąd:</strong>
-            <span id="errorMessage"></span>
-        </div>
-    </div>
-
-    <button id="open-settings" style="margin-top: 8px; font-size: 12px;">⚙️ Ustawienia</button>
-    
-    <script src="i18n-helper.js"></script>
-    <script src="security-checker.js"></script>
-    <script src="config.js"></script>
-    <script src="popup.js"></script>
+  <header class="header">
+    <h1>Bezpieczeństwo strony</h1>
+    <button id="open-settings" class="icon-button" type="button" aria-label="Ustawienia" title="Ustawienia">⚙︎</button>
+  </header>
+  <main id="result" class="hidden">
+    <div class="status-summary" aria-live="polite"><span class="status-dot" aria-hidden="true"></span><span id="statusBadge" class="status-badge"></span></div>
+    <section id="warningBox" class="warning"><strong>Sprawdzanie strony…</strong></section>
+    <section class="score" aria-label="Ocena ryzyka">
+      <div class="score-labels"><span class="score-label">Risk Score</span><span id="scoreNumber" class="score-number">0/100</span></div>
+      <div class="score-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="scoreFill" class="score-fill"></div></div>
+    </section>
+    <section id="details" class="details"><div id="analysis-container" class="analysis-container"><button id="toggle-details" class="details-toggle" type="button">Pokaż szczegóły analizy</button><ul id="analysis-details" class="analysis-details"></ul></div></section>
+    <div id="buttons" class="buttons"></div>
+  </main>
+  <div id="error" class="hidden" role="alert"><div class="warning red"><strong>Błąd</strong> <span id="errorMessage"></span></div></div>
+  <script src="i18n-helper.js"></script>
+  <script src="security-checker.js"></script>
+  <script src="config.js"></script>
+  <script src="popup.js"></script>
 </body>
 </html>
