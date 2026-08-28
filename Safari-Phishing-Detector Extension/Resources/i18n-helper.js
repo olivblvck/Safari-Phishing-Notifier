@@ -1,50 +1,7 @@
-//
-//  i18n-helper.js
-//  Safari-Phishing-Detector
-//
-//  Created by Oliwia on 15/07/2026.
-//
-
-// i18n-helper.js – nadpisuje domyślny chrome.i18n wybranym językiem
-
-let customMessages = null;
-
-async function loadCustomMessages(lang) {
-  if (lang === 'auto') {
-    customMessages = null;
-    return;
-  }
-  try {
-    const url = chrome.runtime.getURL(`_locales/${lang}/messages.json`);
-    const res = await fetch(url);
-    customMessages = await res.json();
-  } catch (e) {
-    console.warn('Nie udało się wczytać tłumaczenia:', lang, e);
-    customMessages = null;
-  }
-}
-
-function getMessage(key, substitutions) {
-  if (customMessages && customMessages[key]) {
-    let msg = customMessages[key].message;
-    if (substitutions) {
-      const subs = Array.isArray(substitutions) ? substitutions : [substitutions];
-      subs.forEach((sub, i) => {
-        msg = msg.replace(new RegExp(`\\$${i + 1}`, 'g'), sub);
-      });
-    }
-    return msg;
-  }
-  // fallback do domyślnego systemowego chrome.i18n
-  return chrome.i18n.getMessage(key, substitutions);
-}
-
-async function initI18n() {
-  return new Promise((resolve) => {
-    chrome.storage.local.get(['spd_language'], async (data) => {
-      const lang = data.spd_language || 'auto';
-      await loadCustomMessages(lang);
-      resolve();
-    });
-  });
-}
+let customMessages=null,activeLanguage='en';
+const popupLabels={en:['Page security','Risk score','SAFE','WARNING','DANGER','Settings'],pl:['Bezpieczeństwo strony','Ocena ryzyka','BEZPIECZNA','OSTRZEŻENIE','ZAGROŻENIE','Ustawienia'],it:['Sicurezza della pagina','Punteggio di rischio','SICURO','AVVISO','PERICOLO','Impostazioni'],de:['Seitensicherheit','Risiko-Score','SICHER','WARNUNG','GEFAHR','Einstellungen'],es:['Seguridad de la página','Puntuación de riesgo','SEGURO','ADVERTENCIA','PELIGRO','Ajustes'],fr:['Sécurité de la page','Score de risque','SÛR','AVERTISSEMENT','DANGER','Réglages'],az:['Səhifə təhlükəsizliyi','Risk balı','TƏHLÜKƏSİZ','XƏBƏRDARLIQ','TƏHLÜKƏ','Parametrlər'],cs:['Zabezpečení stránky','Skóre rizika','BEZPEČNÉ','VAROVÁNÍ','NEBEZPEČÍ','Nastavení'],el:['Ασφάλεια σελίδας','Βαθμολογία κινδύνου','ΑΣΦΑΛΕΣ','ΠΡΟΕΙΔΟΠΟΙΗΣΗ','ΚΙΝΔΥΝΟΣ','Ρυθμίσεις'],fi:['Sivun turvallisuus','Riskipisteet','TURVALLINEN','VAROITUS','VAARA','Asetukset'],hr:['Sigurnost stranice','Ocjena rizika','SIGURNO','UPOZORENJE','OPASNOST','Postavke'],hu:['Oldalbiztonság','Kockázati pontszám','BIZTONSÁGOS','FIGYELMEZTETÉS','VESZÉLY','Beállítások'],no:['Sidesikkerhet','Risikoscore','TRYGG','ADVARSEL','FARE','Innstillinger'],sk:['Bezpečnosť stránky','Skóre rizika','BEZPEČNÉ','UPOZORNENIE','NEBEZPEČENSTVO','Nastavenia'],sv:['Sidsäkerhet','Riskpoäng','SÄKER','VARNING','FARA','Inställningar'],tr:['Sayfa güvenliği','Risk puanı','GÜVENLİ','UYARI','TEHLİKE','Ayarlar'],uk:['Безпека сторінки','Оцінка ryzyka','БЕЗПЕЧНО','ПОПЕРЕДЖЕННЯ','НЕБЕЗПЕКА','Налаштування']};
+async function loadCustomMessages(lang){activeLanguage=lang==='auto'?(chrome.i18n.getUILanguage().split('-')[0]||'en'):lang;if(lang==='auto'){customMessages=null;return}try{customMessages=await(await fetch(chrome.runtime.getURL(`_locales/${lang}/messages.json`))).json()}catch(e){console.warn('Unable to load translation:',lang,e);customMessages=null}}
+function getMessage(key,substitutions){if(customMessages&&customMessages[key]){let msg=customMessages[key].message;const subs=substitutions?(Array.isArray(substitutions)?substitutions:[substitutions]):[];subs.forEach((sub,i)=>msg=msg.replace(new RegExp(`\$${i+1}`,'g'),sub));return msg}return chrome.i18n.getMessage(key,substitutions)}
+function localizeChrome(){const l=popupLabels[activeLanguage]||popupLabels.en,h=document.querySelector('.header h1'),r=document.querySelector('.score-label'),s=document.getElementById('open-settings'),b=document.getElementById('statusBadge');if(h)h.textContent=l[0];if(r)r.textContent=l[1];if(s){s.title=l[5];s.setAttribute('aria-label',l[5])}if(b){if(b.classList.contains('green'))b.textContent=l[2];else if(b.classList.contains('yellow'))b.textContent=l[3];else if(b.classList.contains('red'))b.textContent=l[4]}}
+async function initI18n(){return new Promise(resolve=>chrome.storage.local.get(['spd_language'],async data=>{await loadCustomMessages(data.spd_language||'auto');resolve()}))}
+document.addEventListener('DOMContentLoaded',async()=>{await initI18n();localizeChrome();const b=document.getElementById('statusBadge');if(b)new MutationObserver(localizeChrome).observe(b,{attributes:true,attributeFilter:['class']})});
