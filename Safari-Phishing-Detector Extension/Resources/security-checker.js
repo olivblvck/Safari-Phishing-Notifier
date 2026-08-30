@@ -6,9 +6,16 @@ class DomainSecurityChecker {
   }
 
   checkDomain(url, pageSignals = {}) {
-    const domain = this.extractDomain(url);
+    if (!globalThis.PhishingRiskEngine) {
+      throw new Error('Risk engine is not loaded.');
+    }
 
-    if (this.isWhitelisted(domain)) {
+    const domain = this.extractDomain(url);
+    const analysis = globalThis.PhishingRiskEngine.analyse(url, pageSignals, {
+      trustedDomains: this.config.whitelist || []
+    });
+
+    if (analysis.signals.critical.length === 0 && this.isWhitelisted(domain)) {
       return {
         domain,
         status: 'safe',
@@ -20,11 +27,6 @@ class DomainSecurityChecker {
       };
     }
 
-    if (!globalThis.PhishingRiskEngine) {
-      throw new Error('Risk engine is not loaded.');
-    }
-
-    const analysis = globalThis.PhishingRiskEngine.analyse(url, pageSignals);
     const color = analysis.status === 'safe' ? 'green' : analysis.status === 'warning' ? 'yellow' : 'red';
     const reasonKey = analysis.status === 'safe'
       ? 'reasonSafe'
@@ -48,7 +50,7 @@ class DomainSecurityChecker {
   }
 
   extractDomain(url) {
-    const normalized = globalThis.PhishingRiskEngine?.normalizeUrl(url);
+    const normalized = globalThis.PhishingRiskEngine.normalizeUrl(url);
     return normalized ? normalized.hostname : String(url || '').toLowerCase();
   }
 
