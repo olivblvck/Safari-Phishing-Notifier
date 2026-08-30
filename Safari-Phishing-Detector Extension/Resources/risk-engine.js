@@ -82,7 +82,6 @@
     const host = url.hostname;
     const labels = host.split('.').filter(Boolean);
     const tld = labels.at(-1) || '';
-    const pathAndQuery = `${url.pathname}${url.search}`.toLowerCase();
 
     if (pageSignals.hasSeedPhraseField) addSignal(result.signals.critical, 'seed-phrase', 'This page requests a recovery or seed phrase.', 100);
     if (pageSignals.hasPrivateKeyField) addSignal(result.signals.critical, 'private-key', 'This page requests a private key.', 100);
@@ -101,7 +100,6 @@
     if (labels.length > 4) addSignal(result.signals.weak, 'many-subdomains', 'The URL has an unusually deep subdomain structure.', 4);
     if (host.length > 45) addSignal(result.signals.weak, 'long-domain', 'The domain name is unusually long.', 3);
     if ((host.match(/-/g) || []).length >= 3) addSignal(result.signals.weak, 'many-hyphens', 'The domain contains many hyphens.', 3);
-    if (/\b(verify|wallet|secure|login|signin|account|update)\b/.test(pathAndQuery)) addSignal(result.signals.weak, 'sensitive-path', 'The URL contains account or verification wording.', 2);
 
     return finalize(result);
   }

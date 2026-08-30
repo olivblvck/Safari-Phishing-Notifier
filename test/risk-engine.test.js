@@ -34,7 +34,7 @@ test('marks a seed phrase prompt as danger', () => {
   assert.ok(result.signals.critical.some((signal) => signal.id === 'seed-phrase'));
 });
 
-test('does not penalize a trusted source domain without page signals', () => {
+test('does not penalize a trusted login path without page signals', () => {
   const result = engine.analyse('https://github.com/login', {}, { trustedDomains });
   assert.equal(result.status, 'safe');
   assert.equal(result.score, 0);
